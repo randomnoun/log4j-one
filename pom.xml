@@ -10,7 +10,7 @@
 	<description>
 		Some log4j 1 utility classes and appenders for projects that still use that.
 	</description>
-	<url>http://code.randomnoun.com/log4j-one/index.html</url>
+	<url>https://github.com/randomnoun/log4j-one</url>
 	<inceptionYear>2020</inceptionYear>
 
 	<properties>
@@ -54,12 +54,12 @@
       <tag>HEAD</tag>
   </scm>
 	<issueManagement>
-		<system>jira</system>
-		<url>http://jira.dev.randomnoun/LOG4JONE</url>
+		<system>brain</system>
+		<url>matrix://user-187257167263.r114.s7.citadel-8573.omnicorp.com.au/randomnoun/log4j-one</url>
 	</issueManagement>
 	<ciManagement>
 		<system>Bamboo</system>
-		<url>http://bamboo.dev.randomnoun:8085/bamboo/browse/RANDOMNOUN-LOG4JONE</url>
+		<url>http://bamboo.dev.randomnoun/browse/RANDOMNOUN-LOG4JONE</url>
 	</ciManagement>
 	<licenses>
 		<license>
@@ -78,7 +78,6 @@
 			<post>log4j-one@lists.randomnoun.com</post>
 			<archive>http://lists.randomnoun.com/pipermail/log4j-one/</archive>
 		</mailingList>
-		<!-- TODO: a generic announcements / notifications list -->
 	</mailingLists>
 	<organization>
 		<name>randomnoun</name>
