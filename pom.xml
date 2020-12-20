@@ -3,7 +3,7 @@
 	
 	<groupId>com.randomnoun.common</groupId>
 	<artifactId>log4j-one</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 	
 	<name>randomnoun log4j1 classes</name>
@@ -51,7 +51,8 @@
 		<connection>scm:git:http://gitlab.dev.randomnoun/randomnoun/log4j-one.git</connection>
 		<developerConnection>scm:git:http://gitlab.dev.randomnoun/randomnoun/log4j-one.git</developerConnection>
 		<url>http://gitlab.dev.randomnoun/randomnoun/log4j-one</url>
-    </scm>
+      <tag>log4j-one-0.0.1</tag>
+  </scm>
 	<issueManagement>
 		<system>jira</system>
 		<url>http://jira.dev.randomnoun/LOG4JONE</url>
