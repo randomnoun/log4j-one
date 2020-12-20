@@ -149,10 +149,6 @@
                             <include>**/*Test.java</include>
                             <include>**/*TestSuite.java</include>
                         </includes>
-                        <excludes>
-                            <!-- exclude the log4j1 tests -->
-                            <exclude>**/log4j/*Test.java</exclude>
-                        </excludes>
                     </configuration>
 
                     <executions>
