@@ -192,6 +192,24 @@
 					</dependencies>
 				</plugin>
 				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>3.2.0</version>
+					<!-- 
+					  this configuration is used during the javadoc:jar goal during the release
+					  configuration for the reports is in the <reporting> section  
+					-->
+					<configuration>
+	                	<additionalparam>-Xdoclint:none</additionalparam>
+	                	<failOnError>false</failOnError>
+						<javadocDirectory>${project.basedir}/src/main/javadoc</javadocDirectory>
+						<docfilessubdirs>true</docfilessubdirs>
+						<author>true</author>
+						<linksource>true</linksource>
+					</configuration>
+				</plugin>
+				
 				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
@@ -278,11 +296,15 @@
 		          <developerConnection>scm:git:ssh://git@github.com:randomnoun/log4j-one.git</developerConnection>
 		        </configuration>
             </plugin>           		
-		
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.2.0</version>
+				<!-- 
+				  this configuration is used during the site:site goal during the release
+				  configuration for the javadoc artifact is in the <pluginManagement> section  
+				-->
 				<configuration>
                 	<additionalparam>-Xdoclint:none</additionalparam>
                 	<failOnError>false</failOnError>
@@ -300,6 +322,7 @@
 					</reportSet>
 				</reportSets>
 			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
