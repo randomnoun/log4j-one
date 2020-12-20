@@ -358,12 +358,6 @@
 	        <url>http://nexus2.dev.randomnoun/nexus/content/repositories/snapshots/</url>
 	        <uniqueVersion>false</uniqueVersion>
 	    </snapshotRepository>
-		<site>
-			<id>site</id>
-			<name>log4j-one Website</name>
-			<!-- this will be externally visible at http://code.randomnoun.com/log4j-one -->
-			<url>scp://code.randomnoun.com/var/www/code.randomnoun.com/log4j-one/</url>
-		</site>
 	</distributionManagement>
 
 </project>
