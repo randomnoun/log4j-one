@@ -1,13 +1,11 @@
 
 # log4j-one
 
-## Background and opinionated rant
+## Overview
 
-Well, everyone who uses log4j now realises the folly of their ways and think they need to add a couple of seconds to their startup time whilst their logging framework initialises, and who amongst us can honestly say that they don't want to spend time understanding arbitrary changes to configuration APIs and file formats ? 
+**log4j-one** is a set of appenders and utilities for log4j. 
 
-And it's a doozy of a configuration API, let me tell you. If you haven't created a factory for the builder for the builder for the configuration object, (that can't be composed of any object other than Strings, mind you) that calls the factory of the builder of the builder of the logger appender then you haven't lived.
-
-So anyway, minor rant aside, everyone now uses log4j2, except for people who still use log4j1. This package is for that second lot.
+( where log4j 1 is your primary logging framework, i.e. where all your logging configuration is, and where all the appenders live ). 
 
 ## What's in the box ?
 
@@ -38,6 +36,11 @@ Add this to your pom.xml, or pom.xml equivalent:
 </dependency>
 ```
 Or from here on maven central, until such time that I create a release on github:  https://repo1.maven.org/maven2/com/randomnoun/common/log4j-one/0.0.4/
+
+## Anything else up your sleeve ?
+
+Well, if you're forced to use code that logs to log4j2 and you want all that redirected back into log4j 1, 
+might I suggest you check out https://github.com/randomnoun/log4j-one-bridge
 
 ## Licensing
 
