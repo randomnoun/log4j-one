@@ -35,7 +35,7 @@ Add this to your pom.xml, or pom.xml equivalent:
   <version>1.0.0</version>
 </dependency>
 ```
-Or from here on maven central, until such time that I create a release on github:  https://repo1.maven.org/maven2/com/randomnoun/common/log4j-one/0.0.4/
+Or from here on maven central, until such time that I create a release on github:  https://repo1.maven.org/maven2/com/randomnoun/common/log4j-one/1.0.0/
 
 ## Anything else up your sleeve ?
 
