@@ -32,7 +32,7 @@ Add this to your pom.xml, or pom.xml equivalent:
 <dependency>
   <groupId>com.randomnoun.common</groupId>
   <artifactId>log4j-one</artifactId>
-  <version>0.0.4</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 Or from here on maven central, until such time that I create a release on github:  https://repo1.maven.org/maven2/com/randomnoun/common/log4j-one/0.0.4/
