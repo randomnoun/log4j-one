@@ -1,3 +1,4 @@
+[![Maven Central](https://img.shields.io/maven-central/v/com.randomnoun.common/log4j-one.svg)](https://search.maven.org/artifact/com.randomnoun.common/log4j-one)
 
 # log4j-one
 
