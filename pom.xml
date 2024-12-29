@@ -22,15 +22,14 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
-			<version>4.12</version>
+			<version>4.13.2</version>
 		</dependency>
 		<dependency>
-            <!-- this dep replaces log4j:log4j 1.2.17, without the classes with CVEs on them -->
-            <groupId>com.randomnoun.log4j</groupId>
-            <artifactId>log4j-good-bits</artifactId>
-            <version>1.2.17-1</version>
+            <!-- this dep replaces log4j:log4j 1.2.17, fixing CVEs -->
+            <groupId>ch.qos.reload4j</groupId>
+            <artifactId>reload4j</artifactId>
+            <version>1.2.26</version>
 		</dependency>
-
 	</dependencies>
 
 	
@@ -40,14 +39,6 @@
 		<url>http://gitlab.dev.randomnoun/randomnoun/log4j-one</url>
       <tag>HEAD</tag>
   </scm>
-	<issueManagement>
-		<system>brain</system>
-		<url>matrix://user-187257167263.r114.s7.citadel-8573.omnicorp.com.au/randomnoun/log4j-one</url>
-	</issueManagement>
-	<ciManagement>
-		<system>Bamboo</system>
-		<url>http://bamboo.dev.randomnoun/browse/RANDOMNOUN-LOG4JONE</url>
-	</ciManagement>
 	<licenses>
 		<license>
 			<name>Simplified BSD License</name>
@@ -57,15 +48,6 @@
 			<comments>Simplified BSD License (BSD 2-clause license).</comments>
 		</license>
 	</licenses>
-	<mailingLists>
-		<mailingList>
-			<name>log4j-one Mailing List</name>
-			<subscribe>log4j-one-subscribe@lists.randomnoun.com</subscribe>
-			<unsubscribe>log4j-one-unsubscribe@lists.randomnoun.com</unsubscribe>
-			<post>log4j-one@lists.randomnoun.com</post>
-			<archive>http://lists.randomnoun.com/pipermail/log4j-one/</archive>
-		</mailingList>
-	</mailingLists>
 	<organization>
 		<name>randomnoun</name>
 		<url>http://www.randomnoun.com</url>
@@ -88,28 +70,6 @@
 	</developers>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>javacc-maven-plugin</artifactId>
-				<version>2.5</version>
-				<executions>
-					<execution>
-						<id>jtb-javacc</id>
-						<goals>
-							<goal>jtb-javacc</goal>
-						</goals>
-						<configuration>
-							<nodePackageName>com.randomnoun.common.jexl.ast</nodePackageName>
-							<visitorPackageName>com.randomnoun.common.jexl.visitor</visitorPackageName>
-							<javadocFriendlyComments>true</javadocFriendlyComments>
-							<descriptiveFieldNames>true</descriptiveFieldNames>
-							<printer>true</printer>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -168,13 +128,6 @@
 							<artifactId>doxia-module-html</artifactId>
 							<version>1.1.0</version>
 						</dependency>
-						<!--  
-						<dependency>
-							<groupId>net.trajano.wagon</groupId>
-				            <artifactId>wagon-git</artifactId>
-				            <version>2.0.3</version>
-						</dependency>
-						 -->
 					</dependencies>
 				</plugin>
 				
@@ -195,51 +148,10 @@
 						<linksource>true</linksource>
 					</configuration>
 				</plugin>
-				
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.codehaus.mojo
-										</groupId>
-										<artifactId>
-											javacc-maven-plugin
-										</artifactId>
-										<versionRange>
-											[2.5,)
-										</versionRange>
-										<goals>
-											<goal>jtb-javacc</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
 
-   <!-- 
-     The performRelease profile is automatically included when performing releases.
-     Don't forget to install the appropriate version of gpg.exe, and include the 
-       -Darguments=-Dgpg.passphrase=PASSPHRASE -Dgpg.passphrase=PASSPHRASE 
-     command-line options when releasing, as per 
-       https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven 
-     unless that doesn't work, in which case updating settings.xml instead, as per 
-       http://stackoverflow.com/questions/14114528/avoid-gpg-signing-prompt-when-using-maven-release-plugin 
-     -->
 	<profiles>
 		<profile>
 			<id>release-sign-artifacts</id>
