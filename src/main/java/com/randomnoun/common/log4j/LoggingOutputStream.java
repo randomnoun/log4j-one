@@ -9,7 +9,9 @@ import java.nio.charset.Charset;
 
 import org.apache.log4j.Logger;
 
-/** An outputstream that writes to a log4j Logger
+/** An outputstream that writes to a log4j Logger. 
+ * 
+ * Log lines are separated by CRs (\r), LFs (\n), or CRLFs (\r\n)
  *
  * @author knoxg
  */
@@ -19,6 +21,7 @@ public class LoggingOutputStream extends OutputStream {
 	PipedOutputStream pos;
 	PipedInputStream pis;
 	InputStreamReader isr;
+	boolean startCrLf = false; // set to true after receiving a CR
 	
 	public LoggingOutputStream(Logger logger, Charset charset) throws IOException {
 		this.logger = logger;
@@ -40,10 +43,17 @@ public class LoggingOutputStream extends OutputStream {
 		int ch = isr.read();
 		if (ch == -1) {
 			// not a full character
-		} else if (ch == 10) {
+		} else if (ch == 13) {
 			logger.info(line); line.setLength(0);
+			startCrLf = true;
+		} else if (ch == 10) {
+			if (!startCrLf) {
+				logger.info(line); line.setLength(0);
+			}
+			startCrLf = false;
 		} else { 
 			line.append((char) b);
+			startCrLf = false;
 		}
 	}
 }
