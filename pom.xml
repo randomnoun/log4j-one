@@ -15,6 +15,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<github.release.targetCommitish>master</github.release.targetCommitish>
 	</properties>
 
 	<dependencies>
@@ -148,6 +149,27 @@
 						<linksource>true</linksource>
 					</configuration>
 				</plugin>
+				
+                <plugin>
+                    <groupId>com.ragedunicorn.tools.maven</groupId>
+                    <artifactId>github-release-maven-plugin</artifactId>
+                    <version>1.0.7</version>
+                    <executions>
+                      <execution>
+                        <id>default-cli</id>
+                        <configuration>
+                          <owner>randomnoun</owner>
+                          <repository>${project.artifactId}</repository>
+                          <server>github-release-token</server>
+                          <tagName>v${project.version}</tagName>
+                          <name>v${project.version}</name>
+                          <targetCommitish>${github.release.targetCommitish}</targetCommitish>
+                          <releaseNotes>src/site/release-notes.md</releaseNotes>
+                        </configuration>
+                      </execution>
+                    </executions>
+                </plugin>    
+				
 			</plugins>
 		</pluginManagement>
 	</build>
